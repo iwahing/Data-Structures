@@ -1,18 +1,20 @@
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Array {
 private:
     T *data;
     int size;
 public:
 
-    Array(int size){
+    Array(int s):
+        size(s)
+    {
         assert(size > 0);
         data = new T[size]{};
-        size = size;
     }
 
     Array(const Array&) = delete;
@@ -39,5 +41,19 @@ public:
 };
 
 int main(){
+    Array<int> intArray(12);
+    Array<double> doubleArray(12);
+
+    for (int count = 0; count < intArray.getSize(); ++count)
+    {
+        intArray[count] = count;
+        doubleArray[count] = count + 0.5;
+    }
+
+    for (int count = intArray.getSize()-1; count >= 0; --count){
+        cout << intArray[count] << '\t' << doubleArray[count] << '\n' ;
+    }
+    cout << endl;
+
     return 0;
 }
