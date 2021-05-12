@@ -2,9 +2,11 @@
 
 Personal Implementation of Data Structures in C++
 
+## Implemented
+- `Arrays`
+
 ## Things to Implement
 
-- `Array`
 - `Linked list`
 - `Queue`
 - `Stack`
